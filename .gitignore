@@ -4,3 +4,7 @@ blog/migrations
 blog/__pycache__
 blogpy/__pycache__
 .env
+blogpy/__pycache__/settings.cpython-38.pyc
+
+#static files
+files/
