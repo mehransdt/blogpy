@@ -24,8 +24,9 @@ class Article(models.Model):
     cover = models.FileField(upload_to='files/article_cover',null=False,blank=False , validators=[validate_file_extension])
     content = RichTextField()
     created_at = models.DateTimeField(default=datetime.now)
-    categoty = models.ForeignKey('category',on_delete=models.CASCADE)
+    category = models.ForeignKey('category',on_delete=models.CASCADE)
     author = models.ForeignKey(UserProfile,on_delete=models.CASCADE)
+    slider = models.BooleanField(default=False)
 
 
 class Category(models.Model):

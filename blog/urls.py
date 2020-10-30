@@ -3,4 +3,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.IndexPage.as_view(), name = 'index'),
+    url(r'^contact/$', views.ContactPage.as_view(), name = 'contact'),
+    url(r'^article/$', views.ArticlePage.as_view(), name = 'article'),
+
 ]
