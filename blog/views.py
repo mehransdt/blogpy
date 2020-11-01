@@ -38,8 +38,8 @@ class IndexPage(TemplateView):
 class ContactPage(TemplateView):
     template_name = "page-contact.html"
 
-def article_content_view(request,id):
-    content = Article.objects.get(id=id).content
+def article_content_view(request,article_id):
+    content = Article.objects.get(id=article_id).content
     context = {
         'content':content
     }
