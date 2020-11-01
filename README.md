@@ -1,8 +1,7 @@
 # blogpy
-blog with django and python- using docker for stacks
+blog with django and python - using docker
 
-Modules:
-psycopg2
-ckeditor
+Installing all reqirments:
+pip install -r requirments/requirments.txt
 
-use "docker-compose up -u "
+use "docker-compose up -u 
