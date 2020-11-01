@@ -13,7 +13,7 @@ class IndexPage(TemplateView):
                 'cover': article.cover.url,
                 'category': article.category.title,
                 'created_at': article.created_at.date,
-                'content':article.content,
+                'article_id': article.pk,
             })
 
         slider_data = []
