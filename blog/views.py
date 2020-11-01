@@ -28,10 +28,7 @@ class IndexPage(TemplateView):
                 'cover':slider_article.cover.url if slider_article.cover else None,
 
             })
-
-
-
-
+            
         context = {
             'article_data': article_data,
             'slider_article_data': slider_data,
@@ -41,8 +38,13 @@ class IndexPage(TemplateView):
 class ContactPage(TemplateView):
     template_name = "page-contact.html"
 
-class ArticlePage(TemplateView):
-    template_name = "article.html"
+def article_content_view(request,id):
+    content = Article.objects.get(id=id).content
+    context = {
+        'content':content
+    }
+    return render(request,'article.html',context)
+
 
 
 
