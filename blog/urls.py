@@ -6,6 +6,7 @@ urlpatterns = [
     url(r'^$', views.IndexPage.as_view(), name = 'index'),
     url(r'^contact/$', views.ContactPage.as_view(), name = 'contact'),
     path('article/<int:article_id>/', views.article_content_view,name= 'article_content'),
-    url(r'^article/api/$',views.AllArticleAPIView.as_view(),name='article_api')
+    url(r'^article/api/$',views.AllArticleAPIView.as_view(),name='article_api'),
+    path('article/single/',views.SingleArticleAPIView.as_view(),name='single_article'),
     
 ]
