@@ -7,8 +7,6 @@ from rest_framework import status
 from . import serializers
 
 
-
-
 class IndexPage(TemplateView):
     def get(self, request, **kwargs):
         article_data = []
@@ -87,7 +85,6 @@ class SingleArticleAPIView(APIView):
         except:
             return Response({'status':'Internal server error'},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
-
 class SearchArticleAPIView(APIView):
     def get(self,request,format=None):
         try:
@@ -109,9 +106,6 @@ class SearchArticleAPIView(APIView):
 
         except:
             return Response({'status':'Internal server error'},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-            
-
-            
 
     
 
