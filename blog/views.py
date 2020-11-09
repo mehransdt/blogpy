@@ -111,7 +111,7 @@ class SubmitArticleAPIView(APIView):
 
         try:
             serializer = serializers.SubmitArticleSerializer(data=request.data)
-            if serializer.is_valid:
+            if serializer.is_valid():
                 title = serializer.data.get('title')
                 cover = request.FILES['cover']
                 content = serializer.data.get('content')
