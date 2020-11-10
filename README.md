@@ -17,4 +17,4 @@ POSTGRES_DB=postgres
 
 run Django and postgresql by this command:
 
-docker-compose up -u
+docker-compose up -d
