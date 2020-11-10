@@ -1,7 +1,20 @@
 # blogpy
-blog with django and python - using docker
+simple blog with django and python
 
-Installing all reqirments:
-pip install -r requirments/requirments.txt
+Create network and volumes in docker with below commands:
 
-use "docker-compose up -u 
+$ docker volume create blogpy_postgresql
+$ docker volume create blogpy_static_volume
+$ docker volume create blogpy_files_volume
+$ docker network create nginx_network
+$ docker network create blogpy_network
+
+create .env file in the project root with below values:
+
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=postgres
+POSTGRES_DB=postgres
+
+run Django and postgresql by this command:
+
+docker-compose up -u
