@@ -140,6 +140,21 @@ class SubmitArticleAPIView(APIView):
         except:
             return Response({'status':'Internal server error'},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
+class UpdateArticleAPIView(APIView):
+    def post(self,request,format=None):
+        try:
+            serializer = serializers.UpdateArticleCoverSerializer(data=request.data)
+            if serializer.is_valid():
+                article_id = serializer.data.get('article_id')
+                cover = request.FILES['cover']
+            else:
+                return Response({'status':'Bad request'},status=status.HTTP_400_BAD_REQUEST)
+
+            Article.objects.filter(id=article_id).update(cover=cover)
+            return Response({'status':'OK'},status=status.HTTP_200_OK)
+
+        except:
+            return Response({'status':'Internal server error'},status=status.HTTP_500_INTERNAL_SERVER_ERROR)
 
 
     
