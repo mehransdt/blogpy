@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '+ciagga$uij07=&*^!n@fs250)u9)4(e=tb@k$f=4^t^s@!=d3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -83,7 +83,7 @@ DATABASES = {
         'NAME': 'postgres',
         'USER' : 'postgres',
         'PASSWORD' : 'postgres',
-        'HOST': 'localhost',
+        'HOST': 'blogpy_postgresql',
         'PORT': '5432',
 
     }
@@ -129,11 +129,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #Static files
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = "/static/"
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
 
 
 #CKEditor
